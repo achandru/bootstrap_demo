@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta charset="utf-8"> 
+
+</head>
+<style>
+    body {
+        font-family: Arial, 
+        Helvetica, sans-serif;
+        background-color: whitesmoke;}
+    * {box-sizing: border-box}
+    /* Full-width input fields */
+    input[type=text], input[type=password], select {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #D3D3D3;
+    }
+
+    /* Add a background color when the inputs get focus */
+    input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+    }
+
+    /* Set a style for all buttons */
+    button {
+    background-color: #4d94ff;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    }
+
+    button:hover {
+    opacity:1;
+    }
+
+
+    /* Float cancel and signup buttons and add an equal width */
+    .signupbtn {
+    float: right;
+    width: 50%;
+    }
+
+    .well-sm {
+    inline-block: initial;
+    }
+    /* Add padding to container elements */
+    .container {
+    padding: 16px;
+    display: table-cell;
+    }
+
+    /* The Modal (background) */
+    .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+    }
+
+    /* Style the horizontal ruler */
+    hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+    }
+
+
+    /* Clear floats */
+    .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+
+    /* Change styles for cancel button and registration button on extra small screens */
+    @media screen and (max-width: 200px) {
+    .cancelbtn, .signupbtn {
+    width: 80%;
+    }
+    }
+    .navbar{
+        background-color: #fefefe;
+        
+    }
+    .brand{
+        text-align:center;
+        float: none;
+    }
+</style>
+<body>
+    <nav class="navbar navbar-light" >
+        <div class="brand" >
+            <img src="http://ww1.prweb.com/prfiles/2012/10/17/10294306/DaisyBill_logo_large_.png" width="105" height="32" alt="Logo">
+        </div>
+      </nav>
+<form class="modal-content" action="/action_page.php">
+<div class="container">
+    <div class="well well-sm">
+        <div align="left">
+            <h5>Billing Info</h5>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" "col-xs-12" "col-md-12" "col-lg-12">
+                <input type="text" placeholder="CREDIT CARD NAME" name="cname" required>
+            </div>
+            <div class="col-sm-12" "col-xs-12" "col-md-12" "col-lg-12">
+                <input type="text" placeholder="CREDIT CARD NUMBER" name="cnum" required>
+            </div>
+            <div class="col-sm-4" "col-xs-4" "col-md-4" "col-lg-4">
+                <input type="text" placeholder="CVV" name="cvv" required>
+            </div>
+            <div class="col-sm-4" "col-xs-4" "col-md-4" "col-lg-4">
+                <input type="text" placeholder="EXP MONTH" name="expmonth" required>
+            </div>
+            <div class="col-sm-4" "col-xs-4" "col-md-4" "col-lg-4">
+                <input type="text" placeholder="EXP YEAR" name="expyear" required>
+            </div>
+            <div class="col-sm-12" "col-xs-12" "col-md-12" "col-lg-12">
+                <input type="text" placeholder="ADDRESS" name="addr" required>
+            </div>
+            <div class="col-sm-6" "col-xs-6" "col-md-6" "col-lg-6">
+                <input type="text" placeholder="APT/SUITE" name="apt" required>
+            </div>
+            <div class="col-sm-6" "col-xs-6" "col-md-6" "col-lg-6">
+                <input type="text" placeholder="CITY" name="city" required>
+            </div>
+            <div class="col-sm-6" "col-xs-6" "col-md-6" "col-lg-6">
+                <select id="stat" name="state" required>
+                    <option value="">SELECT STATE</option>
+                    <option value="b">Bengaluru</option>
+                    <option value="c">Chennai</option>
+                </select>
+            </div>
+            <div class="col-sm-6" "col-xs-6" "col-md-6" "col-lg-6">
+                <input type="text" placeholder="ZIP POSTAL" name="zip" required>
+            </div>
+            <div class="col-sm-12" "col-xs-12" "col-md-12" "col-lg-12">
+                <input type="text" placeholder="COUNTRY" name="country" required>
+            </div>
+        </div>
+        <div class="clearfix" align="center">
+            <div style="text-align:center">
+                <button type="submit" class="signupbtn">Start Free Trial</button>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <h6>Need help? Chat with us below,
+                <font color='#4d94ff'>shoot us an email.</font>or call 646-847-7711</h6>
+        </div>
+    </div>
+</div>
+</form>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    }
+</script>
+
+</body>
+</html>
+
