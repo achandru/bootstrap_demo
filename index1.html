@@ -13,7 +13,6 @@
         </head>
 
         <style>
-
             body {
                 font-family: Arial, 
                 Helvetica, sans-serif;
@@ -197,19 +196,18 @@
                                 <input type="radio" name="radio" value="no">
                                 <input type="radio" name="radio" value="noyes"><br><br><br>
                                 <input type="hidden" class="radio_selected"></div>
-                                <h5><p align="center"><b>Enter credit card info</h5></p>
-                                <img src="images/flower.png" width="195" height="192"><br><br>
+                                <h4><p align="center"><b>Enter credit card info</h4></p>
+                                <img src="images/flowers.png" width="195" height="192"><br><br>
                                 <p align="justify">We don't charge your credit card until after the free 3-day trial period expires.</p><br>
                                 <p align="justify">Zero commitment - you can cancel at any time.</p>
                                 <a href="#" class="previous" ><i class="fa fa-long-arrow-left" float: left></i> Previous step</a>
                             </div>                            
                            
-
                         <div class="column2"><b>
                             <div class="row">
                                 <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
                                     <div>
-                                            <div align="left"><h5>Billing Info</h5></div>
+                                           <div align="left"><h5><b>Billing Info</b></h5></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
@@ -218,8 +216,7 @@
                                     </div>
                                 </div>
                             </div>
-                                
-                                    
+                                                                  
                             <div class="row">
                                     <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
                                         <input type="text" placeholder="CREDIT CARD NAME" name="cname" required >
@@ -342,7 +339,9 @@
                                     <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
                                     <div class="clearfix" align="center">
                                         <div style="text-align:center">
+                                            <div class="signup">
                                         <button style="text-align:center" type="submit" class="signupbtn" id="bold">Start Free Trial</button> <br><br><br><br>
+                                    </div>    
                                         <h6>Need help? Chat with us below,<font color='#4d94ff'>shoot us an email.</font>or call 646-847-7711</h6>
                                     </div>
                                         </div>
@@ -355,14 +354,5 @@
                 </div>
             </form>
         </body>
-
-        <script>
-            $('input[type="radio"]').click(function() {
-            var radio_selected = $(this).next('.radio_selected');
-            if (radio_selected.val() !== 'true') {
-                radio_selected.val("true");
-            }
-            });
-        </script>
     </html>
 
