@@ -1,0 +1,54 @@
+
+    <!DOCTYPE HTML>
+
+    <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">    
+    </head>
+
+    <style>
+
+
+    </style>
+
+    <body>
+
+                            <form>
+
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <input type="text" id="ccnum" name="ccnum" maxlength="16"
+                                class="form-control input-sm" placeholder="Credit Card Number" 
+                                    onkeydown="IsMatchingCard(str);"> 
+                            </div>
+                            </div>   
+                        
+                            </form>
+                        
+
+
+
+
+        <script type="text/javascript" language="javascript">
+                        
+                            function IsMatchingCard(str){
+                                var myRegExp =  /[0-9]{4} {0,1}[0-9]{4} {0,1}[0-9]{4} {0,1}[0-9]{4}/;
+                                return myRegExp.test(str)
+                            }
+                            
+                            function TestGuess(){
+                            alert(IsMatchingCard("1234 1234 1234 1234"));
+                            }
+                        
+        </script>
+
+
+    </body>
+    </html>

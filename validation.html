@@ -1,0 +1,139 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">    
+                
+</head>
+
+<style type="text/css">
+ li {list-style-type: none;
+    font-size: 16pt;
+    }
+    .mail {
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 400px;
+    background : #D8F1F8;
+    border: 1px soild silver;
+    }
+    .mail h2 {
+    margin-left: 38px;
+    }
+    input {
+    font-size: 20pt;
+    }
+    input:focus, textarea:focus{
+    background-color: white;
+    }
+    input submit {
+    font-size: 12pt;
+    }
+    .rq {
+    color: #FF0000;
+    font-size: 10pt;
+    }
+</style>
+
+
+
+
+        <body>
+
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <input type="text" id="cvv" name="cvv" maxlength="3" 
+                        class="form-control input-sm" placeholder="CVV" 
+                        onkeydown="return NumericTextBox(event);" / required> 
+                    </div>
+                </div>
+
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <input type="text" id="ccnum" name="ccnum" maxlength="16"
+                        class="form-control input-sm" placeholder="Credit Card Number" onkeydown="cc_format(value);"> 
+                    </div>
+                </div>
+                            
+        </body>
+
+
+<script type="text/javascript" language="javascript"> 
+        
+        function NumericTextBox(evt) {
+
+        var charCode = evt.keyCode;
+
+        if(evt.ctrlKey == true)
+        {
+        if(charCode == 67 || charCode == 86)
+        {
+        return true;
+        }
+        }
+        if (charCode == 8 || //backspace
+                    charCode == 46 || //delete
+                    charCode == 13 || //enter key
+                    charCode == 189)   //hipen key
+        {
+            return true;
+        }
+        else if (charCode >= 37 && charCode <= 40) //arrow keys
+        {
+            return true;
+        }
+
+        else if (charCode >= 48 && charCode <= 57) //0-9 on key pad
+        {
+            if (evt.shiftKey == true)
+                return false;
+
+            return true;
+        }
+        else if (charCode >= 96 && charCode <= 105) //0-9 on num pad
+        {
+            if (evt.shiftKey == true)
+                return false;
+
+            return true;
+        }
+        else
+            return false;
+        }
+
+
+        
+        function cc_format(value) {
+            var v = value.replace(/\s+/g, '').replace(/[^0-9]/gi, '')
+            var matches = v.match(/\d{4,16}/g);
+            var match = matches && matches[0] || ''
+            var parts = []
+        
+            for (i=0, len=match.length; i<len; i+=4) {
+                parts.push(match.substring(i, i+4))
+            }
+        
+            if (parts.length) {
+                return parts.join(' ')
+            } else {
+                return value
+            }
+        }
+       
+
+</script>
+
+</body>
+</html>
+
+
