@@ -11,7 +11,58 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">    
-    </head>
+   
+
+    <script type="text/javascript" language="javascript">
+
+        function luhnCheckSum(sCardNum) {
+
+            var iOddSum = 0;
+            var iEvenSum = 0;
+            var bIsOdd = true;
+
+            for (var i=sCardNum.length-1; i >= 0; i--) {
+
+                var iNum = parseInt(sCardNum.charAt(i));
+
+                if (bIsOdd) {
+                    iOddSum += iNum;
+                } else {
+                    iNum = iNum * 2;
+                    if (iNum > 9) {
+                        iNum = eval(iNum.toString().split("").join("+"));
+                    }
+                    iEvenSum += iNum;
+                }
+
+                bIsOdd = !bIsOdd;
+            }
+
+            return ((iEvenSum + iOddSum) % 10 == 0);
+        }
+
+        function isValidVisa(sText) {
+            var reVisa = /^(4\d{12}(?:\d{3})?)$/;
+
+            if (reVisa.test(sText)) {
+                return luhnCheckSum(RegExp.$1);
+            } else {
+                return false;
+            }
+        }
+
+
+        function validate() {
+            var oInput1 = document.getElementById("txt1");
+            if (isValidVisa(oInput1.value)) {
+                alert("Valid");
+            } else {
+                alert("Invalid!");
+            }
+
+        }
+</script>
+ </head>
 
     <style>
 
@@ -25,30 +76,14 @@
                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                             <div class="form-group">
                                 <input type="text" id="ccnum" name="ccnum" maxlength="16"
-                                class="form-control input-sm" placeholder="Credit Card Number" 
-                                    onkeydown="IsMatchingCard(str);"> 
+                                class="form-control input-sm" placeholder="Credit Card Number"> 
+                                <input type="button" value="Validate" onclick="validate()" /></p>
                             </div>
-                            </div>   
+                        </div>   
                         
                             </form>
-                        
 
-
-
-
-        <script type="text/javascript" language="javascript">
-                        
-                            function IsMatchingCard(str){
-                                var myRegExp =  /[0-9]{4} {0,1}[0-9]{4} {0,1}[0-9]{4} {0,1}[0-9]{4}/;
-                                return myRegExp.test(str)
-                            }
-                            
-                            function TestGuess(){
-                            alert(IsMatchingCard("1234 1234 1234 1234"));
-                            }
-                        
-        </script>
-
+                                 
 
     </body>
     </html>

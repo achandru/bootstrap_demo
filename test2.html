@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["cname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+    var x = document.forms["myForm"]["cnum"].value;
+    if (x == "") {
+        alert("Number must be filled out");
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+
+<form name="myForm" action="/action_page.php"
+onsubmit="return validateForm()" method="post">
+
+Name  : <input type="text" name="cname" placeholder="Credit Card Name"><br>
+
+Number: <input type="text" name="cnum" placeholder="Credit Card Number">
+
+
+
+<br><br><br>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
